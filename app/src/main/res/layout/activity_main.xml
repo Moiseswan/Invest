@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="48dp"
+        android:gravity="center"
+        android:text="InvestEasy"
+        android:textColor="@color/myprimary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:text="O valor recebido ao final do investimento será de:"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="0.0"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_label" />
+
+    <TextView
+        android:id="@+id/hint_fees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Valor rendimentos:"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tv_result"
+        app:layout_constraintStart_toStartOf="@+id/tv_result"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result" />
+
+    <TextView
+        android:id="@+id/tv_result_fees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="0.0"
+        android:textColor="@color/myprimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hint_fees" />
+
+    <TextView
+        android:id="@+id/tv_hint_aporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Aporte por mês:"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/tv_result_fees"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result_fees" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/tv_result_fees"
+        app:layout_constraintStart_toStartOf="@+id/tv_hint_aporte"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hint_aporte">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_value"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Inserir Valor $"
+            android:inputType="numberDecimal"
+            android:paddingStart="0dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_hint_months"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Qtde de meses:"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/til_value"
+        app:layout_constraintTop_toBottomOf="@+id/til_value" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_month"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/til_value"
+        app:layout_constraintStart_toStartOf="@+id/tv_hint_months"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hint_months">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_month"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Inserir Num Meses"
+            android:inputType="number"
+            android:maxLength="3"
+            android:paddingStart="0dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_hint_fees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Juros %:"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/til_month"
+        app:layout_constraintTop_toBottomOf="@+id/til_month" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_fees"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="@+id/til_month"
+        app:layout_constraintStart_toStartOf="@+id/tv_hint_fees"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hint_fees">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_fees"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Inserir Juros"
+            android:inputType="numberDecimal"
+            android:maxLength="4"
+            android:paddingStart="0dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/btn_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_limpar"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="16dp"
+        android:text="Limpar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_guideline"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+
+        android:id="@+id/btn_calcular"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Calcular"
+        android:textColor="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_guideline" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
